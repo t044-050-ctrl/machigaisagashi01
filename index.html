@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>まちがいさがし</title>
-    <meta property="og:title" content="まちがいさがし">
-    <meta property="og:description" content="【自立活動】見る力を鍛えるまちがいさがしアプリです。">
-    <meta property="og:type" content="website">
+    <title>見る力をつけよう - こども観察力トレーニング</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: M PLUS Rounded 1c -->
@@ -22,6 +19,8 @@
             background-color: #0f172a;
             touch-action: manipulation;
             user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
             margin: 0;
             padding: 0;
             width: 100vw;
@@ -161,6 +160,10 @@
 
     <!-- Game Logic & SVG Renderer -->
     <script>
+        // 長押し・右クリック・ダブルクリックによるコンテキストメニュー等を抑止
+        document.addEventListener('contextmenu', (event) => event.preventDefault());
+        document.addEventListener('dblclick', (event) => event.preventDefault());
+
         const themes = [
             { id: 'dolphin', num: '1', symbol: '①', name: 'イルカのおやこ' },
             { id: 'elephant', num: '2', symbol: '②', name: 'ぞうさんと風船' },
